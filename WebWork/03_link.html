@@ -6,7 +6,25 @@
     <title>Document</title>
 
     <style>
+        /* CSS 의 주석 */
+        /* CSS 기본구문 
+   selector { property : value; property : value; ...}  */
         p {background-color: yellow;}
+        div#d01 {
+            /* id="d01" 인 div element 에 적용 */
+            color:blueviolet;
+            border: 1px solid salmon;
+        }
+
+        /* class 에 c1 을 가진 div element 에 적용 */
+        div.c1 {
+            background-color: cyan;
+        }
+
+        div.c2 {
+            color: green;
+        }
+
     </style>
 
 </head>
@@ -43,6 +61,25 @@ font-family			글꼴
  -->
 
 
+<!-- 
+HTML 에서 element 를 식별하는 수단 3가지 (attribute)
+
+1. id
+	: 고유(unique) 한 element 식별용으로 사용
+	: 사용처: CSS, JavaScript
+
+2. class
+	: 그룹으로 여러 element에 적용
+	: 한 element에 복수 class 적용 가능.
+	: 사용처: CSS, JavaScript
+
+3. name
+	: 주로 form 관련 element에 적용
+	: 사용처: JavaScript, 서버프로그래밍(PHP, JSP 등..)
+	        서버에 데이터를 전송할때는 반드시 name 사용!!
+ 
+ -->
+
 <body>
     <p style="color:blue">문단</p>
     <p style="color: red; text-align: right;">문단</p>
@@ -51,6 +88,12 @@ font-family			글꼴
     <hr>
     <a href="https://www.naver.com">네이버</a><br>
     <a href="https://www.daum.net">DAUM</a>
+    <hr>
+    <!-- id attrib 는 문서내 고유한 식별수단 제공용도 -->
+    <div id="d01">안녕하세요</div>
+    <div class="c1">안녕하세요</div>
+    <div class="c2">안녕하세요</div>
+    <div class="c1 c2">안녕하세요</div>
 
 
     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
