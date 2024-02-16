@@ -46,6 +46,20 @@ let myObj, myJSON, arr;
 <body>
     <h2>JSON</h2>
 
+    <script>
+        myObj = {name: "John", age: 31, city: 'Seoul'};  // JS obj
+        console.log(myObj);
+        // JS Obj -> JSON str 변환
+        console.log(JSON.stringify(myObj));
+
+        myJSON = `{"name":'John', "age":31, "city":"Seoul"}`;
+        console.log(myJSON);
+
+        // JSON str -> JS Obj 변환
+        myObj = JSON.parse(myJSON);
+        console.log(myObj);
+    </script>
+
     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 </body>
 </html>
