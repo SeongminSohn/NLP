@@ -12,5 +12,6 @@ urlpatterns = [
     path('ex01/', views.func01),  # template 사용. render 함수
     path('ex02/', views.func02),  # context 값,  주석
     path('ex03/', views.func03),  # dot-lookup 
+    path('ex04/', views.func04),  # if, for
 
 ]

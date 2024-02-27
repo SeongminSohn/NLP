@@ -67,5 +67,39 @@ def func03(request):
             'song': '노래노래',
             'artist': '가수가수',
         },
+
+        # attribute
+        'advisor': User('김순희', 37),
+
+        # List-index
+        'points': [11, 22, 33, 44],
+
+        'members' : [
+            User('홍길동', 34),
+            User('김만두', 19),
+            User('차림표', {
+                'main': '짜장면',
+                'price': [5600, 7400, 9300] 
+            })
+        ],
+
     }
     return render(request, 'page03.html', context)
+
+class User:
+    def __init__(self, name, info):
+        self.name = name
+        self.info = info
+
+    def __str__(self):
+        return f'User 의 __str__ 값 {self.name}-{self.info}'
+    
+
+def func04(request):
+    context = {
+        "team_kim": ['김은정', '김선영', '김초희', '김경애', '김영미'],
+        "ages" : [],
+        "points": [(10, -1), (20, -2), (30, -3), (40, -4)],
+        "info" : {"매물": '42평 4룸', "보증금": 2000, "세": 140},
+    }
+    return render(request, 'page04.html', context)    

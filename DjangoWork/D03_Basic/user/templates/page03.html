@@ -12,5 +12,28 @@
         <li>{{ album.song }}</li>
         <li>{{ album.artist }}</li>
     </ul>
+    <hr>
+
+    <h5>Attribute lookup</h5>
+    <p>{{ advisor }}</p>
+    <ul>
+        <li>{{ advisor.name }}</li>
+        <li>{{ advisor.info }}</li>
+        <li>{{ advisor.xxx }}</li>
+    </ul>
+    <hr>
+
+    <h5>List-index lookup</h5>
+    <p>{{ points }}</p>
+    <ul>
+        <li>{{ points.0 }}</li>
+        <li>{{ points.1 }}</li>
+        <li>{{ points.10 }}</li>
+    </ul>
+
+    <hr>
+    <p> {{members.2.info.price.1}} </p> {# 7400 이 찍히게 해보세요 #}
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 </body>
 </html>
