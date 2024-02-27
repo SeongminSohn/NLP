@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Page02</h1>
+    <p>Title: {{ title }}</p>
+    <p>summary: {{ summary }} </p>
+    <!-- 없는 변수는 렌더링 되지 않는다 -->
+    <p>name: {{ name }} </p>
+
+    {# 템플릿 주석은 렌더링 되지 않는다 #}
+
+    {% comment %}
+        여러줄 템플릿 주석입니다
+        템플릿 주석은 rendering 되지 않습니다
+        response  된 페이지의 소스보기, 개발자 보기에서 확인해봅시다.
+    {% endcomment %}
+
+</body>
+</html>
