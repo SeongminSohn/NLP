@@ -28,34 +28,22 @@
                 </tr>
             </thead>
             <tbody>
+                {% for post in list %}
                 <tr>
-                    <td>1</td>
-                    <td><a href="https://www.naver.com">Hello</a> </td>
-                    <td>John</td>
-                    <td>23</td>
-                    <td>2021-03-21</td>
+                    <td>{{ post.id }}</td>
+                    <td><a href="/board/detail/{{ post.id }}/">{{ post.subject }}</a> </td>
+                    <td>{{ post.user }}</td>
+                    <td>{{ post.view_cnt }}</td>
+                    <td>{{ post.reg_date|date:"Y-m-d H:i:s"}}</td>
                 </tr>
-                <tr>
-                    <td>1</td>
-                    <td>Hello </td>
-                    <td>John</td>
-                    <td>23</td>
-                    <td>2021-03-21</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>Hello </td>
-                    <td>John</td>
-                    <td>23</td>
-                    <td>2021-03-21</td>
-                </tr>
+                {% endfor %}
             </tbody>
         </table>
         <!-- 목록 -->
         
         <div class="row">
             <div class="col-12">
-                <a class="btn btn-outline-dark" href="#">작성</a>
+                <a class="btn btn-outline-dark" href="/board/write/">작성</a>
             </div>
         </div>
     </div>
