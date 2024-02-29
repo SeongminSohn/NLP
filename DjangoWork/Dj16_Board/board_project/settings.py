@@ -125,3 +125,21 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+# SQL Logging 설정
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console': {
+            'level': 'DEBUG',  # DEBUG 모드에서 동작
+            'class': 'logging.StreamHandler',
+        },
+    },
+    'loggers': {
+        'django.db.backends': {   # DB 관련 로그
+            'handlers': ['console'],    # 위 설정된 console 에 로그 출력
+            'level': 'DEBUG',
+        },
+    },
+}
