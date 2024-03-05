@@ -51,10 +51,26 @@ def list(request):
 def update(request, id=None):
     response = f'{request.path} {request.method}요청, id:{id}'
     print(response)
-    return render(request, 'update.html')
+
+    if request.method == "GET":  # 글 수정 폼
+        post = Post.objects.get(id = id)   # SELECT
+        return render(request, 'update.html', {'post': post})
+    elif request.method == "POST":  # 글 수정
+        id = request.POST['id']
+
+        post = Post.objects.get(id = id);  # SELECT
+        post.subject = request.POST['subject']
+        post.content = request.POST['content']
+        post.save()    # UPDATE
+
+        return render(request, 'updateOk.html', {'result': 1, 'post': post})
 
 @csrf_exempt
 def delete(request):
     response = f'{request.path} {request.method}요청'
     print(response)
-    return HttpResponse(response)
+
+    if request.method == "POST":
+        post = Post.objects.get(id = request.POST['id'])  # SELECT
+        post.delete()  # DELETE
+        return render(request, "deleteOk.html", {'result': 1})
